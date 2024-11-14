@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Checkout Process</title>
+    <link rel="stylesheet" href="purchase2.css">
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo"><img src="images/logo-2.png" alt="Tuscany Logo"></div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="home2.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                    <li><a href="aboutUs2.html" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                    <li><a href="tourPackges.html" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a></li>
+                    <li><a href="contactUs2.html" data-lang-eng="Contact Us" data-lang-vie="Liên Hệ">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <select id="language-select">
+                        <option value="eng">Eng</option>
+                        <option value="vie">Vie</option>
+                    </select>
+                </div>
+                <div class="user-profile">
+                    <img src="images/Ellipse 8.png" alt="User Profile" class="profile-icon" onclick="toggleDropdown()">
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="ticket2.html">
+                            <img src="images/Layer 1-3.png" alt="My Tickets"> <!-- Thêm biểu tượng cho My Tickets -->
+                            My Tickets
+                        </a>
+                        <a href="#">
+                            <img src="images/clarity_logout-line.png" alt="Logout"> <!-- Thêm biểu tượng cho Logout -->
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <script src="ticket.js"></script>
+            </div>
+        </header>
+
+        <!-- Progress Bar -->
+        <div class="progress-bar" id="progressBar">
+            <div class="step completed" id="step1">
+                <div class="circle">1</div>
+                <div class="step-text booking-text">Booking Details</div>
+            </div>
+            <div class="line"></div>
+            <div class="step" id="step2">
+                <div class="circle">2</div>
+                <div class="step-text details-text">Your Details</div>
+            </div>
+            <div class="line"></div>
+            <div class="step" id="step3">
+                <div class="circle">3</div>
+                <div class="step-text payment-text">Payment</div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Left Column: Thông tin người nhận vé (if needed) -->
+        <div class="left-column">
+            <h3>Confirm Your Details</h3>
+            <div class="info-box">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="info-box">
+                <label>Surname</label>
+                <input type="text" placeholder="Enter your surname" required>
+            </div>
+            <div class="info-box">
+                <label>Telephone Number</label>
+                <input type="tel" placeholder="Enter your telephone number" required>
+            </div>
+            <div class="info-box">
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email address" required>
+            </div>
+        </div>
+
+        <!-- Right Column: Ticket Overview (copied from purchase1.html) -->
+        <div class="right-column">
+            <h3>Your Tickets Overview</h3>
+            <div class="overview-box">
+                <div class="ticket-overview">
+                    <img src="images/Rectangle 16-2.png" alt="Wine Tasting in Tuscany" class="ticket-image">
+                    <div>
+                        <h4>Wine Tasting in Tuscany</h4>
+                        <p>
+                            <span id="selected-date"><span id="displayDate">FRI, 23 DEC 2022</span></span>
+                        </p>
+                        <p>
+                            <span id="selected-time"><span id="displayTime">15:00</span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="divider">
+                <div class="selected-tickets">
+                    <p><span>Adult (18+): </span><span id="adult-price">€64.00</span></p>
+                    <p><span>Child (6-17): </span><span id="child-price">€22.00</span></p>
+                    <p><span>Infant (0-5): </span><span id="infant-price">€0.00</span></p>
+                </div>
+
+                <hr class="divider">
+                <div class="total-price">
+                    <span>Total Price</span>
+                    <span class="price" id="total-price">€86.00</span>
+                </div>
+
+                <button class="next-step-btn" onclick="goToNextStep()">Go to the Final Step</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for navigation -->
+    <script>
+        function goToNextStep() {
+            window.location.href = 'purchase3.html'; 
+        }
+    </script>
+
+</body>
+
+</html>

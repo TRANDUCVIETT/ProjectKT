@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="logIn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Login Form Modal -->
+    <div class="login-modal">
+        <div class="modal-content">
+            <a href="javascript:void(0);" class="close-link" onclick="goBack()">
+                <span class="close-btn">&times;</span>
+            </a>
+
+            <script>
+                function goBack() {
+                    window.history.back(); // Quay lại trang trước
+                }
+            </script>
+
+            <h2>Login</h2>
+            <form class="login-form" onsubmit="handleLogin(event)">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email address" required>
+
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </span>
+                </div>
+
+                <p class="forgot-password"><a href="forgotPassword.html">Forgot your password?</a></p>
+
+                <!-- Nút Sign In -->
+                <button type="submit" class="login-btn">Sign In</button>
+
+                <script>
+                    function handleLogin(event) {
+                        event.preventDefault(); // Ngăn form gửi yêu cầu HTTP mặc định
+
+                        // Lưu trạng thái đăng nhập vào localStorage (nếu cần)
+                        localStorage.setItem("isLoggedIn", "true");
+
+                        // Chuyển hướng đến trang home2.html
+                        window.location.href = "home2.html";
+                    }
+                </script>
+
+                <div class="or-divider">or</div>
+
+                <!-- Nút Google Sign In -->
+                <div id="g_id_onload" data-client_id="YOUR_GOOGLE_CLIENT_ID" data-login_uri="http://localhost/redirect"
+                    data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin" data-type="standard" data-shape="rectangular" data-theme="outline"
+                    data-text="continue_with" data-size="large">
+                </div>
+
+                <p class="signup-link">Don’t have an account? <a href="signUp1.html">Sign Up</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="logIn.js"></script>
+</body>
+
+</html>

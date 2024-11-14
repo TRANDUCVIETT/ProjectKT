@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours in Tuscany</title>
+    <link rel="stylesheet" href="home2.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo-2.png" alt="Tuscany Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="home2.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                    <li><a href="aboutUs2.html" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                    <li><a href="tourPackges.html" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a></li>
+                    <li><a href="contactUs2.html" data-lang-eng="Contact Us" data-lang-vie="Liên Hệ">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <select id="language-select">
+                        <option value="eng">Eng</option>
+                        <option value="vie">Vie</option>
+                    </select>
+                </div>
+
+
+                <div class="user-profile">
+                    <img src="images/Ellipse 8.png" alt="User Profile" class="profile-icon" onclick="toggleDropdown()">
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="ticket2.html">
+                            <img src="images/Layer 1-3.png" alt="My Tickets">
+                            My Tickets
+                        </a>
+                        <a href="home.html" onclick="handleLogout()">
+                            <img src="images/clarity_logout-line.png" alt="Logout">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    // Toggle hiển thị menu thả xuống khi nhấn vào biểu tượng
+                    function toggleDropdown() {
+                        console.log("Toggle dropdown called"); // Thêm log để kiểm tra
+                        document.getElementById("userDropdown").classList.toggle("show");
+                    }
+
+                    // Đóng dropdown nếu nhấn ra ngoài
+                    window.onclick = function (event) {
+                        if (!event.target.closest('.user-profile')) { // Sử dụng closest để kiểm tra
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            for (var i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
+                            }
+                        }
+                    }
+                </script>
+
+        </header>
+
+
+
+
+        <!-- Service Section -->
+        <!-- Main Section -->
+        <main class="main-content">
+            <section class="hero-section">
+                <h1 data-lang-eng="Enjoy in the best way!" data-lang-vie="Tận hưởng một cách tuyệt vời!">Enjoy in the
+                    best way!</h1>
+                <p data-lang-eng="Enjoy our services for your trip anytime"
+                    data-lang-vie="Hãy tận hưởng dịch vụ của chúng tôi cho chuyến đi của bạn bất cứ lúc nào">
+                    Enjoy our services for your trip anytime
+                </p>
+            </section>
+
+
+            <div class="tour-selector-container">
+                <div class="tabs">
+                    <button id="public-tab" class="tab active" onclick="showSearch('public')">Public Tours</button>
+                    <button id="private-tab" class="tab" onclick="showSearch('private')">Private Tours</button>
+                </div>
+
+                <div class="tour-selector">
+                    <div class="search-bar">
+                        <!-- Public Tours Section -->
+                        <div id="publicTourSection" class="search-section active">
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/icon_private tours 2.png" alt="People Icon" class="icon">
+                                    <span>Number of people</span>
+                                </div>
+                                <select id="numberPeopleSelect" class="dropdown">
+                                    <option>Choose number</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5+</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/system-uicons_clock.png" alt="Calendar Icon" class="icon">
+                                    <span>Date</span>
+                                </div>
+                                <select id="dateSelect" class="dropdown">
+                                    <option>Choose Date</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/system-uicons_calendar-month.png" alt="Clock Icon" class="icon">
+                                    <span>Time</span>
+                                </div>
+                                <select id="timeSelect" class="dropdown">
+                                    <option>Choose Time</option>
+                                    <option>Morning</option>
+                                    <option>Afternoon</option>
+                                    <option>Evening</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/icon _tour.png" alt="Tour Icon" class="icon">
+                                    <span>Tour</span>
+                                </div>
+                                <select id="tourSelect" class="dropdown">
+                                    <option>Select Tour</option>
+                                    <option>Historical Tour</option>
+                                    <option>Cultural Tour</option>
+                                    <option>Adventure Tour</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/icon_car.png" alt="Transport Icon" class="icon">
+                                    <span>Transportation</span>
+                                </div>
+                                <select id="transportSelect" class="dropdown">
+                                    <option>Select Transportation</option>
+                                    <option>Bus</option>
+                                    <option>Private Car</option>
+                                    <option>Bicycle</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Private Tours Section -->
+                        <div id="privateTourSection" class="search-section">
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/system-uicons_calendar-month.png" alt="Calendar Icon" class="icon">
+                                    <span>Date</span>
+                                </div>
+                                <select id="privateDateSelect" class="dropdown">
+                                    <option>Choose Date</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/system-uicons_clock.png" alt="Clock Icon" class="icon">
+                                    <span>Time</span>
+                                </div>
+                                <select id="privateTimeSelect" class="dropdown">
+                                    <option>Choose Time</option>
+                                    <option>Morning</option>
+                                    <option>Afternoon</option>
+                                    <option>Evening</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/icon _tour.png" alt="Tour Icon" class="icon">
+                                    <span>Tour</span>
+                                </div>
+                                <select id="privateTourSelect" class="dropdown">
+                                    <option>Select Tour</option>
+                                    <option>Luxury Tour</option>
+                                    <option>VIP Tour</option>
+                                    <option>Customizable Tour</option>
+                                </select>
+                            </div>
+                            <div class="search-item">
+                                <div class="search-header">
+                                    <img src="images/icon_type.png" alt="Type Icon" class="icon">
+                                    <span>Types</span>
+                                </div>
+                                <select id="typeSelect" class="dropdown">
+                                    <option>Select types</option>
+                                    <option>Exclusive</option>
+                                    <option>Family</option>
+                                    <option>Corporate</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Button -->
+                    <button class="search-button" onclick="goToSearchPage()">
+                        <img src="images/search.png" alt="Search">
+                    </button>
+                
+                    <script>
+                        function goToSearchPage() {
+                            window.location.href = 'searchResult2.html'; // Replace with the actual search results page URL
+                        }
+                    </script>
+                </div>
+            </div>
+
+            <script src="home.js"></script>
+    </div>
+
+
+    <!-- Tour Packages Section -->
+    <div class="tour-packages-wrapper">
+        <!-- Tour Packages Section -->
+        <section class="tour-packages-section">
+            <h2>Tour Packages</h2>
+            <div class="tour-packages-container">
+                <!-- Tour 1 - Lucca Bike Tour -->
+                <div class="tour-card">
+                    <img src="images/Rectangle 16.png" alt="Lucca Bike Tour">
+                    <div class="tour-info">
+                        <h3 data-lang-eng="Lucca Bike Tour" data-lang-vie="Tour Xe Đạp Lucca">Lucca Bike Tour</h3>
+                        <div class="tour-meta">
+                            <div class="meta-item">
+                                <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                <span data-lang-eng="EVERY DAY" data-lang-vie="HÀNG NGÀY">EVERY DAY</span>
+                            </div>
+                            <div class="meta-item">
+                                <img src="images/Layer 1-4.png" alt="People Icon">
+                                <span data-lang-eng="3-10 PP" data-lang-vie="3-10 NGƯỜI">3-10 PP</span>
+                            </div>
+                        </div>
+                        <p data-lang-eng="A tour of the city and its surroundings led by a professional guide..."
+                            data-lang-vie="Một tour khám phá thành phố và các khu vực xung quanh do hướng dẫn viên chuyên nghiệp dẫn dắt...">
+                            A tour of the city and its surroundings led by a professional guide...</p>
+                        <a href="luccaBikeTour.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read
+                            More →</a>
+                    </div>
+                </div>
+
+                <!-- Tour 2 - Wine Tasting In Tuscany -->
+                <div class="tour-card">
+                    <img src="images/Rectangle 16-2.png" alt="Wine Tasting In Tuscany">
+                    <div class="tour-info">
+                        <h3 data-lang-eng="Wine Tasting In Tuscany" data-lang-vie="Nếm Rượu Ở Tuscany">Wine Tasting
+                            In
+                            Tuscany</h3>
+                        <div class="tour-meta">
+                            <div class="meta-item">
+                                <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                <span data-lang-eng="MONDAY" data-lang-vie="THỨ HAI">MONDAY</span>
+                            </div>
+                            <div class="meta-item">
+                                <img src="images/Layer 1-4.png" alt="People Icon">
+                                <span data-lang-eng="10-30 PP" data-lang-vie="10-30 NGƯỜI">10-30 PP</span>
+                            </div>
+                        </div>
+                        <p data-lang-eng="The real magic is here where you can enjoy the best Tuscan wine and eat..."
+                            data-lang-vie="Sự kỳ diệu thực sự ở đây là bạn có thể thưởng thức rượu vang và ẩm thực tuyệt vời nhất của Tuscany...">
+                            The real magic is here where you can enjoy the best Tuscan wine and eat...</p>
+                        <a href="Winetasking.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More
+                            →</a>
+                    </div>
+                </div>
+
+                <!-- Tour 3 - Cinque Terre Tour -->
+                <div class="tour-card">
+                    <img src="images/Rectangle 16-3.png" alt="Cinque Terre Tour">
+                    <div class="tour-info">
+                        <h3 data-lang-eng="Cinque Terre Tour" data-lang-vie="Tour Cinque Terre">Cinque Terre Tour
+                        </h3>
+                        <div class="tour-meta">
+                            <div class="meta-item">
+                                <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                    DECIDED</span>
+                            </div>
+                            <div class="meta-item">
+                                <img src="images/Layer 1-4.png" alt="People Icon">
+                                <span data-lang-eng="10-50 PP" data-lang-vie="10-50 NGƯỜI">10-50 PP</span>
+                            </div>
+                        </div>
+                        <p data-lang-eng="Visiting the 5 Terre is a must, and you can never go there enough..."
+                            data-lang-vie="Thăm 5 Terre là điều phải làm, và bạn sẽ không bao giờ cảm thấy đủ...">
+                            Visiting the 5 Terre is a must, and you can never go there enough...</p>
+                        <a href="cinqueTerreTour.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read
+                            More →</a>
+                    </div>
+                </div>
+
+                <!-- Tour 4 - Siena and Surroundings -->
+                <div class="tour-card">
+                    <img src="images/Rectangle 16-4.png" alt="Siena and Surroundings">
+                    <div class="tour-info">
+                        <h3 data-lang-eng="Siena and Surroundings" data-lang-vie="Siena và Vùng Lân Cận">Siena and
+                            Surroundings</h3>
+                        <div class="tour-meta">
+                            <div class="meta-item">
+                                <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                    DECIDED</span>
+                            </div>
+                            <div class="meta-item">
+                                <img src="images/Layer 1-4.png" alt="People Icon">
+                                <span data-lang-eng="5-10 PP" data-lang-vie="5-10 NGƯỜI">5-10 PP</span>
+                            </div>
+                        </div>
+                        <p data-lang-eng="Visit the beautiful Siena and the cities that surround it to experience..."
+                            data-lang-vie="Tham quan Siena tuyệt đẹp và các thành phố xung quanh để trải nghiệm...">
+                            Visit the beautiful Siena and the cities that surround it to experience...</p>
+                        <a href="sienaAndSurrounding.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read
+                            More →</a>
+                    </div>
+                </div>
+        </section>
+    </div>
+    </div>
+
+
+    <!-- Service Section -->
+    <section class="service-section">
+        <div class="service-content">
+            <div class="service-image">
+                <img src="images/about picture.png" alt="Lucca City">
+            </div>
+            <div class="service-text">
+                <h3>WELCOME TO OUR SITE!</h3>
+                <h2>We Are The Center Of Lucca To Offer You The Best</h2>
+                <p>
+                    We are right in the center of Lucca to offer you the real city life! With years of
+                    experience in practically every tourism sector, with us you can find complete packages at
+                    the lowest price, to travel and learn and have fun all without worries and without stress.
+                    What are you waiting for, book a bright evening, a trip to beautiful Tuscany or a personal
+                    tour for you!
+                </p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <strong>20+</strong>
+                        <span>Years<br>Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>100+</strong>
+                        <span>Happy<br>Customer</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>15+</strong>
+                        <span>Choice<br>of Services</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>10+</strong>
+                        <span>Professional<br>Guides</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="special-offer-section">
+        <div class="offer-content">
+            <h11>Get Special Offers for Organizations</h11>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s.</p>
+                <button class="contact-button" onclick="goToContactPage()">Contact Us</button>
+                <script>
+                    function goToContactPage() {
+                        window.location.href = 'contactUs2.html'; // Replace 'contact.html' with the actual contact page URL
+                    }
+                    </script>
+                    
+
+        </div>
+        <div class="offer-image">
+            <img src="images/stock-photo-traveler-tourist-woman-in-casual-clothes-hat-camera-point-thumb-finger-back-aside-on-workspace-area-2063722232-removebg-preview 1.png"
+                alt="Special Offer Model">
+        </div>
+    </div>
+
+    <div class=" body1">
+        <div class="text2">
+            <p><b>Services</b></p>
+        </div>
+        <div class="TourPackages3">
+            <div class="TourPackages3_1">
+                <img src="images/Rectangle 18.png" alt="" />
+                <img src="images/Bike and rickshaw rental.png" alt="" />
+                <img src="images/Book your quality vehicle quickly for an hour or all day!.png" alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+            <div class="TourPackages3_2">
+                <img src="images/Rectangle 19.png" alt="" />
+                <img src="images/Guided tours of Lucca.png" alt="" />
+                <img src="images/Live the real Lucchese experience by visiting the suburbs by bike! (1).png" alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+            <div class="TourPackages3_3">
+                <img src="images/Rectangle 20 (1).png" alt="" />
+                <img src="images/Trips In The Tuscan Hills.png" alt="" />
+                <img src="images/Do you need not only a bike but also a driver_ Then you have found the right place!.png"
+                    alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="TourPackages4">
+            <div class="TourPackages4_1">
+                <img src="images/Rectangle 18 (1).png" alt="" />
+                <img src="images/Coach Trip Packages.png" alt="" />
+                <img src="images/Book your quality vehicle quickly for an hour or all day!.png" alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+            <div class="TourPackages4_2">
+                <img src="images/Rectangle 19 (1).png" alt="" />
+                <img src="images/Transportation With Luxury Cars.png" alt="" />
+                <img src="images/Live the real Lucchese experience by visiting the suburbs by bike! (1).png" alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+            <div class="TourPackages4_3">
+                <img src="images/Rectangle 20.png" alt="" />
+                <img src="images/Wine Tours By Bus With Guide.png" alt="" />
+                <img src="images/Do you need not only a bike but also a driver_ Then you have found the right place!.png"
+                    alt="" />
+                <a href="page.html"> <img src="images/CTA button.png" alt="" /> </a>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- Next Button -->
+    <div class="body2">
+        <div class="image1"><img src="images/bg.png" alt="" /></div>
+        <div class="bookbike">
+            <div class="input-group1">
+                <label for="name">Name and Surname</label>
+                <input type="name" id="name" name="name" placeholder="Enter your name and surname" required>
+                <br><br>
+                <label for="telephone">Telephone Number</label>
+                <input type="telephone" id="telephone" name="telephone" placeholder="Enter your telephone number"
+                    required>
+                <br><br>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" placeholder="Select the date" required>
+            </div>
+            <div class="input-group2">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <br><br>
+                <label for="Type">Service Type</label>
+                <input type="Type" id="Type" name="Type" placeholder="Select the service types" required>
+                <br><br>
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" placeholder="Select the time" required>
+            </div>
+            <div class="booknow"><a href="page.html"><img src="images/CTA buuton_fill (1).png" alt="" /></a>
+            </div>
+            <div class="booknowbike"><img src="images/Book Now Bike.png" alt="" /></div>
+        </div>
+
+        <div class="bike"><img src="images/bike picture.png" alt="" /></div>
+    </div>
+    </div>
+
+
+    <div class="packages">
+        <p class="h8">The Most Popular Packages</p>
+
+        <div class="package">
+            <div class="package-image">
+                <img src="images/Rectangle 21.png" alt="Bike/Rickshaw">
+            </div>
+            <p class="h9">BIKE / RICKSHAW</p>
+            <p class="price">€10 <span>/day</span></p>
+            <div class="package-details">
+                <ul>
+                    <li><img src="images/icon_one day.png" alt="Icon" class="icon"> Your bike for a day</li>
+                    <li><img src="images/icon_map-2.png" alt="Icon" class="icon"> City App</li>
+                    <li><img src="images/icon_city map.png" alt="Icon" class="icon"> Discount on Rickshaw
+                    </li>
+                    <li><img src="images/icon_support-3.png" alt="Icon" class="icon"> Guaranteed Support
+                    </li>
+                </ul>
+            </div>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package">
+            <div class="package-image">
+                <img src="images/Rectangle 21-2.png" alt="Bike Tours">
+            </div>
+            <p class="h9">BIKE TOURS</p>
+            <p class="price">€30 <span>/day</span></p>
+            <div class="package-details">
+                <ul>
+                    <li><img src="images/icon_mountain bike.png" alt="Icon" class="icon"> A Mountain Bike
+                        Included</li>
+                    <li><img src="images/icon_guide-2.png" alt="Icon" class="icon"> A Guide For You</li>
+                    <li><img src="images/icon_water.png" alt="Icon" class="icon"> Bottle of water</li>
+                    <li><img src="images/icon_support-3.png" alt="Icon" class="icon"> Guaranteed Support
+                    </li>
+                </ul>
+            </div>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package">
+            <div class="package-image">
+                <img src="images/Rectangle 21-3.png" alt="Bus Trips">
+            </div>
+            <p class="h9">BUS TRIPS</p>
+            <p class="price">€45 <span>/day</span></p>
+            <div class="package-details">
+                <ul>
+                    <li><img src="images/icon_ticket 3.png" alt="Icon" class="icon"> Park ticket</li>
+                    <li><img src="images/icon_bus 3.png" alt="Icon" class="icon"> Return bus</li>
+                    <li><img src="images/icon_companion.png" alt="Icon" class="icon"> Companion</li>
+                    <li><img src="images/icon_support-3.png" alt="Icon" class="icon"> Guaranteed Support
+                    </li>
+                </ul>
+            </div>
+            <button>Book Now</button>
+        </div>
+
+        <div class="package">
+            <div class="package-image">
+                <img src="images/Rectangle 21-4.png" alt="Transfer">
+            </div>
+            <p class="h9">TRANSFER</p>
+            <p class="price">€10 <span>/day</span></p>
+            <div class="package-details">
+                <ul>
+                    <li><img src="images/icon_driver.png" alt="Icon" class="icon"> Personal Driver</li>
+                    <li><img src="images/icon_location.png" alt="Icon" class="icon"> Wherever You Want</li>
+                    <li><img src="images/icon_best price-2.png" alt="Icon" class="icon"> At the best price
+                    </li>
+                    <li><img src="images/icon_support-3.png" alt="Icon" class="icon"> Guaranteed Support
+                    </li>
+                </ul>
+            </div>
+            <button>Book Now</button>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews">
+        <h2>Happy Customers Say</h2>
+        <div class="review-cards">
+            <div class="review-card">
+                <img src="images/Ellipse 4.png" alt="Customer Photo" class="customer-photo">
+                <h3>Lyod Gomez</h3>
+                <div class="quote-content">
+                    <img src="images/Asset 16 1.png" alt="Left Quote" class="quote-icon left-quote">
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and
+                        praising
+                        pain was born and I will give you a complete account of the system, and expound the
+                        actual teachings of the great explorer of the truth, the master-builder of human
+                        happiness. No one rejects, dislikes, or avoids pleasure itself, because it is
+                        pleasure.
+                    </p>
+                    <img src="images/Asset 16 1.png" alt="Right Quote" class="quote-icon right-quote">
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="images/Ellipse 4.png" alt="Customer Photo" class="customer-photo">
+                <h3>Lyod Gomez</h3>
+                <div class="quote-content">
+                    <img src="images/Asset 16 1.png" alt="Left Quote" class="quote-icon left-quote">
+                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and
+                        praising
+                        pain was born and I will give you a complete account of the system, and expound the
+                        actual teachings of the great explorer of the truth, the master-builder of human
+                        happiness. No one rejects, dislikes, or avoids pleasure itself, because it is
+                        pleasure.
+                    </p>
+                    <img src="images/Asset 16 1.png" alt="Right Quote" class="quote-icon right-quote">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo-2.png" alt="Tuscany Logo">
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4 data-lang-eng="Services" data-lang-vie="Dịch Vụ">Services</h3>
+                        <ul>
+                            <li data-lang-eng="Bike and Rickshaw rental" data-lang-vie="Thuê xe đạp và xe kéo">
+                                Bike and Rickshaw rental</li>
+                            <li data-lang-eng="Guided Tours of Lucca" data-lang-vie="Tour hướng dẫn Lucca">
+                                Guided
+                                Tours
+                                of Lucca</li>
+                            <li data-lang-eng="Guided Bike Tour of Lucca" data-lang-vie="Tour xe đạp Lucca">
+                                Guided
+                                Bike
+                                Tour of Lucca</li>
+                            <li data-lang-eng="Trip In The Tuscan Hills" data-lang-vie="Chuyến đi trong Đồi Tuscany">
+                                Trip In The Tuscan Hills</li>
+                            <li data-lang-eng="Transportation With Luxury Cars"
+                                data-lang-vie="Vận chuyển bằng xe sang trọng">Transportation With Luxury
+                                Cars
+                            </li>
+                            <li data-lang-eng="Wine Tours By Bus With Guide"
+                                data-lang-vie="Tour rượu vang bằng xe buýt có hướng dẫn">Wine Tours By Bus
+                                With
+                                Guide
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</h3>
+                        <ul>
+                            <li><a href="#" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                            <li><a href="aboutUs.html" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About
+                                    Us</a>
+                            </li>
+                            <li><a href="tourPackges.html" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour
+                                    Packages</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Help" data-lang-vie="Trợ Giúp">Help</h3>
+                        <ul>
+                            <li><a href="#" data-lang-eng="Terms of Use" data-lang-vie="Điều Khoản Sử Dụng">Terms of
+                                    Use</a></li>
+                            <li><a href="#" data-lang-eng="Privacy Policy" data-lang-vie="Chính Sách Bảo Mật">Privacy
+                                    Policy</a></li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Contacts" data-lang-vie="Liên Hệ">Contacts</h3>
+                        <ul>
+                            <li><img src="images/ci_location.png" alt="Location"> <span
+                                    data-lang-eng="Piazza Napoleone, Lucca, Tuscany"
+                                    data-lang-vie="Piazza Napoleone, Lucca, Tuscany">Piazza Napoleone,
+                                    Lucca,
+                                    Tuscany</span></li>
+                            <li><img src="images/clarity_phone-handset-solid.png" alt="Phone"> <span
+                                    data-lang-eng="+39 346 368 5708" data-lang-vie="+39 346 368 5708">+39
+                                    346
+                                    368
+                                    5708</span></li>
+                            <li><img src="images/fluent_mail-16-filled.png" alt="Email"> <span
+                                    data-lang-eng="italiainlimo@gmail.com"
+                                    data-lang-vie="italiainlimo@gmail.com">italiainlimo@gmail.com</span>
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Social Media" data-lang-vie="Mạng Xã Hội">Social Media</h3>
+                        <ul class="social-media">
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled.png" alt="Twitter"></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/loc.tranviet.10"><img src="images/Vector.png"
+                                        alt="Facebook"></a></li>
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled-2.png"
+                                        alt="Instagram"></a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-lang-eng="&copy; 2022. All rights reserved." data-lang-vie="&copy; 2022. Đã đăng ký bản quyền.">
+                &copy; 2022. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+
+    <script src="language.js"></script>
+</body>
+
+</html>

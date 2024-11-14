@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuscany Tours - My Tickets</title>
+    <link rel="stylesheet" href="ticket.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo-2.png" alt="Tuscany Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="home.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                    <li><a href="#" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                    <li><a href="#" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a></li>
+                    <li><a href="#" data-lang-eng="Contact Us" data-lang-vie="Liên Hệ">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <select id="language-select">
+                        <option value="eng">Eng</option>
+                        <option value="vie">Vie</option>
+                    </select>
+                </div>
+                <div class="user-profile">
+                    <img src="images/Ellipse 8.png" alt="User Profile" class="profile-icon" onclick="toggleDropdown()">
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="ticket2.html">
+                            <img src="images/Layer 1-3.png" alt="My Tickets"> <!-- Thêm biểu tượng cho My Tickets -->
+                            My Tickets
+                        </a>
+                        <a href="home.html">
+                            <img src="images/clarity_logout-line.png" alt="Logout"> <!-- Thêm biểu tượng cho Logout -->
+                            Logout
+                        </a>
+                    </div>
+                </div>
+                <script src="ticket.js"></script>
+        </header>
+
+        <!-- My Tickets Section -->
+        <section class="my-tickets-section">
+            <h2>My Tickets</h2>
+            <div class="no-tickets-container">
+                <img src="images/Trip-pana 1.png" alt="No Tickets">
+                <p>You don't have any tickets yet. Start planning your next trip!</p>
+            </div>
+        </section>
+
+        <!-- Tour Packages Section -->
+        <div class="tour-packages-wrapper">
+            <!-- Tour Packages Section -->
+            <section class="tour-packages-section">
+                <h2>Tour Packages</h2>
+                <div class="tour-packages-container">
+                    <!-- Tour 1 - Lucca Bike Tour -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16.png" alt="Lucca Bike Tour">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Lucca Bike Tour" data-lang-vie="Tour Xe Đạp Lucca">Lucca Bike Tour</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="EVERY DAY" data-lang-vie="HÀNG NGÀY">EVERY DAY</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="3-10 PP" data-lang-vie="3-10 NGƯỜI">3-10 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="A tour of the city and its surroundings led by a professional guide..."
+                                data-lang-vie="Một tour khám phá thành phố và các khu vực xung quanh do hướng dẫn viên chuyên nghiệp dẫn dắt...">
+                                A tour of the city and its surroundings led by a professional guide...</p>
+                            <a href="luccaBikeTour.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 2 - Wine Tasting In Tuscany -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-2.png" alt="Wine Tasting In Tuscany">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Wine Tasting In Tuscany" data-lang-vie="Nếm Rượu Ở Tuscany">Wine Tasting
+                                In
+                                Tuscany</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="MONDAY" data-lang-vie="THỨ HAI">MONDAY</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="10-30 PP" data-lang-vie="10-30 NGƯỜI">10-30 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="The real magic is here where you can enjoy the best Tuscan wine and eat..."
+                                data-lang-vie="Sự kỳ diệu thực sự ở đây là bạn có thể thưởng thức rượu vang và ẩm thực tuyệt vời nhất của Tuscany...">
+                                The real magic is here where you can enjoy the best Tuscan wine and eat...</p>
+                            <a href="Winetasking.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 3 - Cinque Terre Tour -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-3.png" alt="Cinque Terre Tour">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Cinque Terre Tour" data-lang-vie="Tour Cinque Terre">Cinque Terre Tour
+                            </h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                        DECIDED</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="10-50 PP" data-lang-vie="10-50 NGƯỜI">10-50 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Visiting the 5 Terre is a must, and you can never go there enough..."
+                                data-lang-vie="Thăm 5 Terre là điều phải làm, và bạn sẽ không bao giờ cảm thấy đủ...">
+                                Visiting the 5 Terre is a must, and you can never go there enough...</p>
+                            <a href="cinqueTerreTour.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 4 - Siena and Surroundings -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-4.png" alt="Siena and Surroundings">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Siena and Surroundings" data-lang-vie="Siena và Vùng Lân Cận">Siena and
+                                Surroundings</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                        DECIDED</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="5-10 PP" data-lang-vie="5-10 NGƯỜI">5-10 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Visit the beautiful Siena and the cities that surround it to experience..."
+                                data-lang-vie="Tham quan Siena tuyệt đẹp và các thành phố xung quanh để trải nghiệm...">
+                                Visit the beautiful Siena and the cities that surround it to experience...</p>
+                            <a href="sienaAndSurrounding.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 5 - Tour of the Lucca Hills -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16 2.png" alt="Tour of the Lucca Hills">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Tour of the Lucca Hills" data-lang-vie="Tham Quan Đồi Lucca">Tour of the
+                                Lucca Hills</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="AT YOUR CHOICE" data-lang-vie="TÙY CHỌN CỦA BẠN">AT YOUR
+                                        CHOICE</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="5-12 PP" data-lang-vie="5-12 NGƯỜI">5-12 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Visit with us the beautiful hills of Lucca, with a guide who will make..."
+                                data-lang-vie="Tham gia cùng chúng tôi khám phá những ngọn đồi đẹp của Lucca, với hướng dẫn viên sẽ làm cho...">
+                                Visit with us the beautiful hills of Lucca, with a guide who will make...</p>
+                            <a href="#" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 6 - Gardaland, Verona -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-2 2.png" alt="Gardaland, Verona">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Gardaland, Verona" data-lang-vie="Gardaland, Verona">Gardaland, Verona
+                            </h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                        DECIDED</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="10-50 PP" data-lang-vie="10-50 NGƯỜI">10-50 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Visit the largest and most fun park in Italy suitable for all..."
+                                data-lang-vie="Tham quan công viên lớn nhất và thú vị nhất ở Ý, phù hợp cho tất cả...">
+                                Visit
+                                the largest and most fun park in Italy suitable for all...</p>
+                            <a href="#" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 7 - Pisa & Lucca -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-3 2.png" alt="Pisa & Lucca">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Pisa & Lucca" data-lang-vie="Pisa & Lucca">Pisa & Lucca</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                        DECIDED</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="10-50 PP" data-lang-vie="10-50 NGƯỜI">10-50 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Exploring Pisa and Lucca with a unique perspective..."
+                                data-lang-vie="Khám phá Pisa và Lucca từ một góc nhìn độc đáo...">Exploring Pisa and
+                                Lucca
+                                with a unique perspective...</p>
+                            <a href="pisa.html" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Tour 8 - Florence -->
+                    <div class="tour-card">
+                        <img src="images/Rectangle 16-4 2.png" alt="Florence">
+                        <div class="tour-info">
+                            <h3 data-lang-eng="Florence" data-lang-vie="Florence">Florence</h3>
+                            <div class="tour-meta">
+                                <div class="meta-item">
+                                    <img src="images/system-uicons_calendar-month-2.png" alt="Calendar Icon">
+                                    <span data-lang-eng="TO BE DECIDED" data-lang-vie="CHƯA XÁC ĐỊNH">TO BE
+                                        DECIDED</span>
+                                </div>
+                                <div class="meta-item">
+                                    <img src="images/Layer 1-4.png" alt="People Icon">
+                                    <span data-lang-eng="5-10 PP" data-lang-vie="5-10 NGƯỜI">5-10 PP</span>
+                                </div>
+                            </div>
+                            <p data-lang-eng="Explore Florence, the cradle of Renaissance..."
+                                data-lang-vie="Khám phá Florence, cái nôi của Phục hưng...">Explore Florence, the cradle
+                                of
+                                Renaissance...</p>
+                            <a href="#" data-lang-eng="Read More →" data-lang-vie="Xem Thêm →">Read More →</a>
+                        </div>
+                    </div>
+            </section>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/logo-2.png" alt="Tuscany Logo">
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4 data-lang-eng="Services" data-lang-vie="Dịch Vụ">Services</h3>
+                        <ul>
+                            <li data-lang-eng="Bike and Rickshaw rental" data-lang-vie="Thuê xe đạp và xe kéo">Bike and
+                                Rickshaw rental</li>
+                            <li data-lang-eng="Guided Tours of Lucca" data-lang-vie="Tour hướng dẫn Lucca">Guided Tours
+                                of Lucca</li>
+                            <li data-lang-eng="Guided Bike Tour of Lucca" data-lang-vie="Tour xe đạp Lucca">Guided Bike
+                                Tour of Lucca</li>
+                            <li data-lang-eng="Trip In The Tuscan Hills" data-lang-vie="Chuyến đi trong Đồi Tuscany">
+                                Trip In The Tuscan Hills</li>
+                            <li data-lang-eng="Transportation With Luxury Cars"
+                                data-lang-vie="Vận chuyển bằng xe sang trọng">Transportation With Luxury Cars</li>
+                            <li data-lang-eng="Wine Tours By Bus With Guide"
+                                data-lang-vie="Tour rượu vang bằng xe buýt có hướng dẫn">Wine Tours By Bus With Guide
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</h3>
+                        <ul>
+                            <li><a href="home.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                            <li><a href="#" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                            <li><a href="#" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a>
+                            </li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Help" data-lang-vie="Trợ Giúp">Help</h3>
+                        <ul>
+                            <li><a href="#" data-lang-eng="Terms of Use" data-lang-vie="Điều Khoản Sử Dụng">Terms of
+                                    Use</a></li>
+                            <li><a href="#" data-lang-eng="Privacy Policy" data-lang-vie="Chính Sách Bảo Mật">Privacy
+                                    Policy</a></li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Contacts" data-lang-vie="Liên Hệ">Contacts</h3>
+                        <ul>
+                            <li><img src="images/ci_location.png" alt="Location"> <span
+                                    data-lang-eng="Piazza Napoleone, Lucca, Tuscany"
+                                    data-lang-vie="Piazza Napoleone, Lucca, Tuscany">Piazza Napoleone, Lucca,
+                                    Tuscany</span></li>
+                            <li><img src="images/clarity_phone-handset-solid.png" alt="Phone"> <span
+                                    data-lang-eng="+39 346 368 5708" data-lang-vie="+39 346 368 5708">+39 346 368
+                                    5708</span></li>
+                            <li><img src="images/fluent_mail-16-filled.png" alt="Email"> <span
+                                    data-lang-eng="italiainlimo@gmail.com"
+                                    data-lang-vie="italiainlimo@gmail.com">italiainlimo@gmail.com</span></li>
+                        </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 data-lang-eng="Social Media" data-lang-vie="Mạng Xã Hội">Social Media</h3>
+                        <ul class="social-media">
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled.png" alt="Twitter"></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/loc.tranviet.10"><img src="images/Vector.png" alt="Facebook"></a></li>
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled-2.png"
+                                        alt="Instagram"></a></li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p data-lang-eng="&copy; 2022. All rights reserved." data-lang-vie="&copy; 2022. Đã đăng ký bản quyền.">
+                &copy; 2022. All rights reserved.</p>
+        </div>
+    </footer>
+    </div>
+
+    <script src="language.js"></script>
+</body>
+
+</html>

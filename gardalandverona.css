@@ -1,0 +1,836 @@
+/* Reset margin, padding và overflow */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/* Thiết lập kích thước màn hình đầy đủ và không kéo ngang */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Đảm bảo tất cả phần tử full màn hình và điều chỉnh theo viewport */
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Đảm bảo header, contact-section và footer cũng full width */
+.header,
+.contact-section,
+footer {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Navigation không bị tràn ra ngoài */
+.navigation ul {
+    display: flex;
+    justify-content: space-around;
+    /* Thay đổi */
+    width: 100%;
+}
+
+.contact-container {
+    width: 100%;
+    /* Chiếm toàn bộ chiều rộng */
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    /* Dùng % thay vì px */
+}
+
+/* Đảm bảo bản đồ cũng không bị tràn */
+.map-container {
+    width: 100vw;
+    /* Sử dụng đơn vị viewport */
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    padding: 40px 5%;
+    /* Thay đổi padding để linh hoạt */
+}
+
+/* Đảm bảo tính responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 10px 5%;
+        /* Sử dụng % thay vì px */
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navigation ul {
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+
+/* Header container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: white;
+    border-bottom: 2px solid #eee;
+}
+
+/* Dải ngang */
+.horizontal-strip {
+    width: 100%;
+    height: 5px;
+    background-color: #ffffff;
+}
+
+/* Khoảng trắng */
+.spacer {
+    height: 50px;
+    background-color: white;
+}
+
+/* Logo */
+.logo img {
+    width: 120px;
+    padding-right: 30px;
+    margin-left: 30px;
+    margin-right: 20px;
+    font-size: 15px;
+}
+
+/* Navigation */
+.navigation ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.navigation ul li a:hover {
+    color: #ff9900;
+}
+
+.navigation ul li .active {
+    color: #ff9900;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+/* Header right section */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 10px;
+}
+
+.language-switcher select {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Dropdown menu styles */
+.user-profile {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Dropdown content container */
+/* Dropdown content container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Hiển thị bên dưới biểu tượng người dùng */
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(254, 254, 254, 0.1);
+    z-index: 9999; /* Đặt z-index cao để hiển thị trên mọi thành phần khác */
+    border-radius: 10px;
+    padding: 10px 0;
+    overflow: visible; /* Đảm bảo menu không bị cắt */
+}
+
+/* Style for each link in dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for each icon inside dropdown */
+.dropdown-content a img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Show the dropdown when triggered */
+.show {
+    display: block;
+    z-index: 9999; /* Đảm bảo dropdown luôn nằm trên */
+}
+
+/* Parent element should not clip child */
+.header, body {
+    overflow: visible; /* Loại bỏ overflow nếu có */
+}
+
+
+/*body main*/
+.tour-page {
+    max-width: 1289px;
+    width: 100%;
+
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #878181;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 140px;
+
+}
+
+.tour-header {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-image img {
+    width: 500px;
+    height: 450px;
+    border-radius: 8px;
+    margin-left: 135px;
+
+}
+
+.thumbnail-images {
+    gap: 5px;
+    margin-left: 129px;
+    font-size: 25px;
+
+}
+
+.thumbnail-images img {
+    width: 162px;
+    height: 100px;
+    border-radius: 8px;
+    cursor: alias;
+    /* margin-left: 0; */
+    transition: transform 0.2s ease;
+
+}
+
+.thumbnail-images img:hover {
+    transform: scale(1.05);
+    /* Tạo hiệu ứng phóng to nhẹ khi hover */
+}
+
+
+
+.tour-info {
+    flex: 1;
+}
+
+.tour-info h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 20px;
+    color: color(display-p3 0.945 0.612 0.203);
+    margin-top: 10px;
+
+}
+
+.price span {
+    font-weight: bold;
+}
+
+.description {
+    margin: 5px 0px;
+    color: #666;
+    line-height: 1.6;
+    width: 650px;
+
+}
+
+.date-picker {
+    margin: 20px 0;
+}
+
+.date-picker label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: -10px;
+
+}
+
+.calendar {
+    width: 270px;
+    border: 1px solid #fbfbfb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.calendar-header .month {
+    color: #333;
+}
+
+.calendar-header .prev-month,
+.calendar-header .next-month {
+    cursor: pointer;
+    color: #060300;
+
+}
+
+.day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0;
+    color: #666;
+}
+
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    padding: 10px;
+}
+
+.dates span {
+    padding: 8px;
+    cursor: pointer;
+    color: #333;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.dates .empty {
+    visibility: hidden;
+}
+
+.dates span:hover {
+    background-color: #e67e22;
+    color: white;
+}
+
+.dates .selected {
+    background-color: color(display-p3 0.9451 0.6196 0.2196);
+    color: white;
+
+}
+
+
+.time-picker {
+    margin-top: 0px;
+
+}
+
+.time-picker label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+.time-picker input[type="time"] {
+    width: 29%;
+    padding: 4px;
+    font-size: 16px;
+    border: 1px solid #f4f0f0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    bottom: 5px;
+    appearance: none;
+    background-image: url('images/system-uicons_clock.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+
+}
+
+.time-picker input[type="time"]:focus {
+    border-color: #e67e22;
+}
+
+
+.buy-button {
+    background-color: color(display-p3 0.9451 0.6196 0.2196);
+    color: white;
+    padding: 10px 65px;
+    font-size: 12px;
+    border: 30px;
+    border-radius: 15px;
+    cursor: alias;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+}
+
+.details {
+    margin-top: 40px;
+    margin-left: 140px;
+
+}
+
+.details h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.details p {
+    font-size: 16px;
+    line-height: 2.1;
+    color: #555;
+    margin-bottom: 40px;
+    width: 1150px;
+
+}
+
+.tour-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+
+.tour-specs li {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #333;
+}
+
+.icon {
+    width: 24px;
+    height: 26px;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+
+
+.gallery {
+    margin: 20px;
+    padding: 60px 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-left: 145px;
+
+}
+
+.gallery h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.gallery-images {
+    display: flex;
+    align-items: start;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    gap: 5px;
+
+}
+
+.gallery-images img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+    flex: 1 1 auto;
+    min-width: 150px;
+    transition: transform 0.3s;
+    padding: 5px;
+
+}
+
+.gallery-images1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+    max-width: 100%;
+
+}
+
+.gallery-images1 img {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex: 1 1 auto;
+    min-width: 150px;
+    transition: transform 0.3s ease
+}
+
+.gallery-images img:hover,
+.gallery-images1 img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.reviews {
+    margin-top: 60px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.reviews h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+.review-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 90px;
+    margin-left: 140px;
+
+}
+
+.review-card {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 800px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+}
+
+.customer-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.quote-content {
+    position: relative;
+    margin-top: 20px;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.quote-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    opacity: 0.3;
+}
+
+.left-quote {
+    top: 0;
+    left: -10px;
+}
+
+.right-quote {
+    bottom: 0;
+    right: -10px;
+}
+
+
+/* Footer */
+/* Footer */
+footer {
+    background-color: #333;
+    color: #f6f6f6;
+    padding: 15px 12px;
+    text-align: left;
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.footer-logo {
+    flex: 1;
+    max-width: 220px;
+    margin-top: 12px;
+
+}
+
+.footer-logo img {
+    width: 110px;
+    margin-bottom: 12px;
+
+}
+
+.footer-divider {
+    width: 100%;
+    border: 0;
+    height: 1.3px;
+    background: #444;
+    margin: 15px 6px;
+
+}
+
+.footer-columns {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+/* Styles riêng cho từng cột */
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 17px;
+    color: #f7f7f7;
+    font-weight: bold;
+
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #f6f6f6;
+}
+
+.footer-column ul li img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff9900;
+}
+
+/* Căn chỉnh biểu tượng mạng xã hội theo chiều dọc */
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media li {
+    list-style: none;
+    color: white;
+}
+
+.social-media li a img {
+    width: 1.6vw;
+    transition: transform 0.3s;
+}
+
+.social-media li a:hover img {
+    transform: scale(1.1);
+}
+
+/* Các phần CSS khác */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 80px;
+        margin-left: 20px;
+    }
+
+    .navigation ul {
+        gap: 15px;
+    }
+
+    .signup-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        width: 100%;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .navigation ul {
+        gap: 10px;
+    }
+
+    .signup-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

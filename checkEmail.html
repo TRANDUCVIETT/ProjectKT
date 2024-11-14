@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Your Email</title>
+    <link rel="stylesheet" href="checkEmail.css">
+</head>
+
+<body>
+
+    <!-- Overlay Background -->
+    <div class="overlay"></div>
+
+    <!-- Check Email Modal -->
+    <div class="modal email-modal">
+        <div class="modal-content">
+            <div class="icon-container">
+                <img src="images/mail.png" alt="Email Icon">
+            </div>
+            <h2>Check your email</h2>
+            <p>We sent a password reset link to <strong id="email-display">loremipsum@gmail.com</strong></p>
+
+            <button class="primary-btn" id="continue-btn">Continue</button>
+
+            <script>
+                document.getElementById("continue-btn").addEventListener("click", function () {
+                    // Chuyển hướng sang trang mới
+                    window.location.href = "setNewPassword.html"; // Thay "newPage.html" bằng đường dẫn trang bạn muốn chuyển đến
+                });
+            </script>
+
+            <p class="resend-text">Didn’t receive the email? <a href="#">Click to resend</a></p>
+            <p class="back-link"><a href="logIn.html">← Back to Login</a></p>
+        </div>
+    </div>
+
+    <script>
+        // Lấy email từ localStorage và hiển thị
+        const emailDisplay = document.getElementById("email-display");
+        const email = localStorage.getItem("resetEmail");
+
+        // Kiểm tra nếu email có trong localStorage, nếu không có thì đặt là 'No email found'
+        if (email) {
+            emailDisplay.textContent = email;
+        } else {
+            emailDisplay.textContent = "No email found";
+        }
+    </script>
+</body>
+
+</html>

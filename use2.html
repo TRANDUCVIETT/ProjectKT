@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta - Terms and Policies</title>
+    <link rel="stylesheet" href="use.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo-2.png" alt="Tuscany Logo">
+            </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="home.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                    <li><a href="aboutUs.html" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                    <li><a href="tourPackges.html" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a></li>
+                    <li><a href="contactUs.html" data-lang-eng="Contact Us" data-lang-vie="Liên Hệ">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="language-switcher">
+                    <select id="language-select">
+                        <option value="eng">Eng</option>
+                        <option value="vie">Vie</option>
+                    </select>
+                </div>
+                <div class="user-profile">
+                    <img src="images/Ellipse 8.png" alt="User Profile" class="profile-icon" onclick="toggleDropdown()">
+                    <div id="userDropdown" class="dropdown-content">
+                        <a href="ticket2.html">
+                            <img src="images/Layer 1-3.png" alt="My Tickets">
+                            My Tickets
+                        </a>
+                        <a href="aboutUs.html" onclick="handleLogout()">
+                            <img src="images/clarity_logout-line.png" alt="Logout">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+
+                <script>
+                    // Toggle hiển thị menu thả xuống khi nhấn vào biểu tượng
+                    function toggleDropdown() {
+                        console.log("Toggle dropdown called"); // Thêm log để kiểm tra
+                        document.getElementById("userDropdown").classList.toggle("show");
+                    }
+
+                    // Đóng dropdown nếu nhấn ra ngoài
+                    window.onclick = function (event) {
+                        if (!event.target.closest('.user-profile')) { // Sử dụng closest để kiểm tra
+                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                            for (var i = 0; i < dropdowns.length; i++) {
+                                var openDropdown = dropdowns[i];
+                                if (openDropdown.classList.contains('show')) {
+                                    openDropdown.classList.remove('show');
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+        </header>
+
+        <!-- Dải ngang và khoảng trắng -->
+        <div class="horizontal-strip"></div>
+        <div class="spacer"></div>
+
+        <!-- Main Content -->
+        <main>
+            <section class="hero">
+                <h1 class="heading-small" data-lang-eng="TERMS AND POLICIES" data-lang-vie="ĐIỀU KHOẢN VÀ CHÍNH SÁCH">TERMS AND POLICIES</h1>
+                <h2 class="heading-large" data-lang-eng="Everything you need to know, all in one place" data-lang-vie="Mọi thứ bạn cần biết, tất cả đều ở cùng một nơi">Everything you need to know, all in one place</h2>
+                <h3 data-lang-eng="HOW WE OPERATE" data-lang-vie="CÁCH CHÚNG TÔI HOẠT ĐỘNG">HOW WE OPERATE</h3>
+            </section>
+
+            <section class="info-cards">
+                <div class="card">
+                    <img src="images/Screenshot 2024-10-25 at 10.11.12.png" alt="Terms of Service">
+                    <h4 data-lang-eng="Terms of Service" data-lang-vie="Điều khoản dịch vụ">Terms of Service</h4>
+                    <p data-lang-eng="The terms you agree to when using Tuscany." data-lang-vie="Những điều khoản bạn đồng ý khi sử dụng Facebook.">The terms you agree to when using Tuscany.</p>
+                </div>
+                <div class="card">
+                    <img src="images/Screenshot 2024-10-25 at 10.11.24.png" alt="Privacy Policy">
+                    <h4 data-lang-eng="Privacy Policy" data-lang-vie="Chính sách quyền riêng tư">Privacy Policy</h4>
+                    <p data-lang-eng="The information we receive and how we use it." data-lang-vie="Thông tin chúng tôi nhận được và cách sử dụng thông tin đó.">The information we receive and how we use it.</p>
+                </div>
+                <div class="card">
+                    <img src="images/Screenshot 2024-10-25 at 10.11.34.png" alt="Community Standards">
+                    <h4 data-lang-eng="Community Standards" data-lang-vie="Tiêu chuẩn cộng đồng">Community Standards</h4>
+                    <p data-lang-eng="Content that isn’t allowed and how to report abuse." data-lang-vie="Nội dung không được phép và cách báo cáo hành vi lạm dụng.">Content that isn’t allowed and how to report abuse.</p>
+                </div>
+            </section>
+
+            <div class="container">
+                <!-- Mục bên trái -->
+                <div class="left-section">
+                    <p class="menu-item" onclick="showContent('content1')" data-lang-eng="Business Policies" data-lang-vie="Chính sách kinh doanh">Business Policies</p>
+                    <p class="menu-item" onclick="showContent('content2')" data-lang-eng="Payment Policies" data-lang-vie="Chính sách thanh toán">Payment Policies</p>
+                    <p class="menu-item" onclick="showContent('content3')" data-lang-eng="Platform Resources" data-lang-vie="Thông tin và nguồn lực về nền tảng">Platform Resources</p>
+                    <p class="menu-item" onclick="showContent('content4')" data-lang-eng="Jobs, Events & Livestreams" data-lang-vie="Việc làm, sự kiện và buổi phát trực tiếp">Jobs, Events & Livestreams</p>
+                </div>
+        
+                <!-- Nội dung bên phải -->
+                <div class="right-section">
+                    <div id="content1" class="content" data-lang-eng="Business Policies Content" data-lang-vie="Nội dung Chính sách kinh doanh">
+                        <p data-lang-eng="Ads" data-lang-vie="Quảng cáo">Ads</p>
+                        <p data-lang-eng="Branded Content" data-lang-vie="Nội dung có thương hiệu">Branded Content</p>
+                        <p data-lang-eng="Commerce" data-lang-vie="Thương mại">Commerce</p>
+                        <p data-lang-eng="Community Contributions" data-lang-vie="Ý kiến đóng góp cộng đồng">Community Contributions</p>
+                        <p data-lang-eng="Partner Monetization Policies" data-lang-vie="Hoạt động kiếm tiền từ đối tác">Partner Monetization Policies</p>
+                    </div>
+
+                    <div id="content2" class="content" data-lang-eng="Payment Policies Content" data-lang-vie="Nội dung Chính sách thanh toán">
+                        <p data-lang-eng="Payment Methods" data-lang-vie="Phương thức thanh toán">Payment Methods</p>
+                        <p data-lang-eng="Payment Security" data-lang-vie="Bảo mật thanh toán">Payment Security</p>
+                        <p data-lang-eng="Secure Payment Process" data-lang-vie="Quy trình thanh toán an toàn">Secure Payment Process</p>
+                    </div>
+
+                    <div id="content3" class="content" data-lang-eng="Platform Resources Content" data-lang-vie="Nội dung Thông tin và nguồn lực về nền tảng">
+                        <p data-lang-eng="Data Security Information" data-lang-vie="Thông tin về bảo mật dữ liệu">Data Security Information</p>
+                        <p data-lang-eng="Account Management" data-lang-vie="Quản lý tài khoản">Account Management</p>
+                        <p data-lang-eng="Privacy Policy" data-lang-vie="Chính sách quyền riêng tư">Privacy Policy</p>
+                    </div>
+
+                    <div id="content4" class="content" data-lang-eng="Jobs, Events, & Livestreams Content" data-lang-vie="Nội dung Việc làm, sự kiện và buổi phát trực tiếp">
+                        <p data-lang-eng="Job Information" data-lang-vie="Thông tin về việc làm">Job Information</p>
+                        <p data-lang-eng="Events & Livestreams" data-lang-vie="Sự kiện và buổi phát trực tiếp">Events & Livestreams</p>
+                        <p data-lang-eng="Workshop Opportunities" data-lang-vie="Cơ hội tham gia các buổi hội thảo">Workshop Opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="images/logo-2.png" alt="Tuscany Logo">
+                </div>
+                <hr class="footer-divider">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 data-lang-eng="Services" data-lang-vie="Dịch Vụ">Services</h3>
+                        <ul>
+                            <li data-lang-eng="Bike and Rickshaw rental" data-lang-vie="Thuê xe đạp và xe kéo">Bike and
+                                Rickshaw rental</li>
+                            <li data-lang-eng="Guided Tours of Lucca" data-lang-vie="Tour hướng dẫn Lucca">Guided Tours
+                                of Lucca</li>
+                            <li data-lang-eng="Guided Bike Tour of Lucca" data-lang-vie="Tour xe đạp Lucca">Guided Bike
+                                Tour of Lucca</li>
+                            <li data-lang-eng="Trip In The Tuscan Hills" data-lang-vie="Chuyến đi trong Đồi Tuscany">
+                                Trip In The Tuscan Hills</li>
+                            <li data-lang-eng="Transportation With Luxury Cars"
+                                data-lang-vie="Vận chuyển bằng xe sang trọng">Transportation With Luxury Cars</li>
+                            <li data-lang-eng="Wine Tours By Bus With Guide"
+                                data-lang-vie="Tour rượu vang bằng xe buýt có hướng dẫn">Wine Tours By Bus With Guide
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</h3>
+                        <ul>
+                            <li><a href="home.html" data-lang-eng="Home" data-lang-vie="Trang Chủ">Home</a></li>
+                            <li><a href="aboutUs.html" data-lang-eng="About Us" data-lang-vie="Về Chúng Tôi">About Us</a></li>
+                            <li><a href="tourPackges.html" data-lang-eng="Tour Packages" data-lang-vie="Gói Tour">Tour Packages</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-lang-eng="Help" data-lang-vie="Trợ Giúp">Help</h3>
+                        <ul>
+                            <li><a href="#" data-lang-eng="Terms of Use" data-lang-vie="Điều Khoản Sử Dụng">Terms of
+                                    Use</a></li>
+                            <li><a href="#" data-lang-eng="Privacy Policy" data-lang-vie="Chính Sách Bảo Mật">Privacy
+                                    Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-lang-eng="Contacts" data-lang-vie="Liên Hệ">Contacts</h3>
+                        <ul>
+                            <li><img src="images/ci_location.png" alt="Location"> <span
+                                    data-lang-eng="Piazza Napoleone, Lucca, Tuscany"
+                                    data-lang-vie="Piazza Napoleone, Lucca, Tuscany">Piazza Napoleone, Lucca,
+                                    Tuscany</span></li>
+                            <li><img src="images/clarity_phone-handset-solid.png" alt="Phone"> <span
+                                    data-lang-eng="+39 346 368 5708" data-lang-vie="+39 346 368 5708">+39 346 368
+                                    5708</span></li>
+                            <li><img src="images/fluent_mail-16-filled.png" alt="Email"> <span
+                                    data-lang-eng="italiainlimo@gmail.com"
+                                    data-lang-vie="italiainlimo@gmail.com">italiainlimo@gmail.com</span></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-lang-eng="Social Media" data-lang-vie="Mạng Xã Hội">Social Media</h3>
+                        <ul class="social-media">
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled.png" alt="Twitter"></a>
+                            </li>
+                            <li><a href="https://www.facebook.com/loc.tranviet.10"><img src="images/Vector.png" alt="Facebook"></a></li>
+                            <li><a href="#"><img src="images/ant-design_twitter-circle-filled-2.png"
+                                        alt="Instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-eng="&copy; 2022. All rights reserved." data-lang-vie="&copy; 2022. Đã đăng ký bản quyền.">
+                    &copy; 2022. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="use.js"></script>
+</body>
+
+</html>

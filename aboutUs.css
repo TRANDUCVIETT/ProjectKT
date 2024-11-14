@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Đảm bảo không có thanh cuộn ngang */
+    height: 100%; /* Đảm bảo body chiếm toàn màn hình */
+}
+
+/* Wrapper */
+.wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.05); /* Đặt nền mờ */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/anh11.png');
+    background-size: cover;
+    background-position: center center;
+    filter: blur(0px); /* Điều chỉnh độ mờ */
+    z-index: -1;
+    opacity: 1; /* Điều chỉnh độ trong suốt nếu cần */
+}
+
+
+/* Header container */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-bottom: none;
+    position: relative;
+    z-index: 10;
+
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.header .logo img {
+    width: 90px;
+}
+
+
+
+/* Navigation */
+.navigation ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+}
+
+.navigation ul li a:hover {
+    color: #ff9900;
+}
+
+/* Khi liên kết trong header được nhấn (active) */
+.navigation ul li a:active, .navigation ul li a.active {
+    color: #ff9900;
+    text-decoration: underline;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-switcher select {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.login {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.login:hover {
+    color: #ff9900;
+}
+
+.signup-btn {
+    background-color: #ff9900;
+    color: white;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 23px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #e68a00;
+}
+
+
+.user-profile {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Dropdown content container */
+/* Dropdown content container */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Hiển thị bên dưới biểu tượng người dùng */
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(254, 254, 254, 0.1);
+    z-index: 9999; /* Đặt z-index cao để hiển thị trên mọi thành phần khác */
+    border-radius: 10px;
+    padding: 10px 0;
+    overflow: visible; /* Đảm bảo menu không bị cắt */
+}
+
+/* Style for each link in dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    gap: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for each icon inside dropdown */
+.dropdown-content a img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+/* Show the dropdown when triggered */
+.show {
+    display: block;
+    z-index: 9999; /* Đảm bảo dropdown luôn nằm trên */
+}
+
+/* Parent element should not clip child */
+.header, body {
+    overflow: visible; /* Loại bỏ overflow nếu có */
+}
+
+
+
+/* Service Section */
+.service-section {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.service-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.service-image img {
+    width: 400px;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-left: 50px;
+
+}
+
+.service-text h3 {
+    font-size: 1em;
+    color: #8f8684;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-left: 30px;
+
+}
+
+.service-text h2 {
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    margin-left: 30px;
+}
+
+.service-text p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 20px;
+    margin-left: 30px;
+
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: -90px;
+
+}
+
+.stat-item {
+    font-size: 14px;
+    color: #888;
+    line-height: 1.2;
+
+}
+
+.stat-item strong {
+    display: block;
+    font-size: 25px;
+    color: #e67e22;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+}
+
+
+/* Service Icons Section */
+.service-icons {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px 0;
+    background: url('images/bg.png');
+    /* border-radius: 8px; */
+    margin-top: 30px;
+    margin: 50px -20px;
+    gap: 20px;
+
+}
+
+.icon-item {
+    text-align: center;
+    color: #333;
+    background-color: #f7dec5;
+    padding: 20px;
+    border-radius: 8px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
+
+}
+
+.icon-item img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.icon-item p {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+
+}
+
+.hero-overlay {
+    position: relative;
+    z-index: 1;
+    padding: 90px;
+    margin-top: -200px;
+
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2); /* Lớp phủ mờ tối, điều chỉnh độ mờ với opacity */
+    z-index: 0;
+}
+
+.hero h1 {
+    font-size: 3em; /* Kích thước chữ lớn cho tiêu đề */
+    font-weight: Pacifico;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Tạo hiệu ứng bóng cho chữ */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero button {
+    padding: 12px 24px;
+    font-size: 1em;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.services h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.services .stats,
+.services .service-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.reviews {
+    margin-top: 60px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.reviews h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+
+}
+
+.review-cards {
+    display: flex;
+    gap: 30px;
+    justify-content: start;
+    margin-bottom: 90px;
+    margin-left: 130px;
+
+}
+
+.review-card {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 570px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+
+}
+
+.customer-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.quote-content {
+    position: relative;
+    margin-top: 20px;
+    padding: 0 30px;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.quote-icon {
+    width: 35px;
+    height: 30px;
+    position: absolute;
+    opacity: 3;
+
+}
+
+.left-quote {
+    top: 0;
+    left: -10px;
+}
+
+.right-quote {
+    bottom: 0;
+    right: -10px;
+}
+
+/* Footer */
+/* Footer */
+footer {
+    background-color: #333;
+    color: #f6f6f6;
+    padding: 15px 12px;
+    text-align: left;
+
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.footer-logo {
+    flex: 1;
+    max-width: 220px;
+    margin-top: 12px;
+
+}
+
+.footer-logo img {
+    width: 110px;
+    margin-bottom: 12px;
+
+}
+
+.footer-divider {
+    width: 100%;
+    border: 0;
+    height: 1.3px;
+    background: #444;
+    margin: 15px 6px;
+
+}
+
+.footer-columns {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+    width: 100%;
+
+}
+
+/* Styles riêng cho từng cột */
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 17px;
+    color: #f7f7f7;
+    font-weight: bold;
+
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    color: #f6f6f6;
+}
+
+.footer-column ul li img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ff9900;
+}
+
+/* Căn chỉnh biểu tượng mạng xã hội theo chiều dọc */
+.social-media {
+    display: flex;
+    gap: 10px;
+}
+
+.social-media li {
+    list-style: none;
+    color: white;
+}
+
+.social-media li a img {
+    width: 1.6vw;
+    transition: transform 0.3s;
+}
+
+.social-media li a:hover img {
+    transform: scale(1.1);
+}
+
+/* Các phần CSS khác */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 20px;
+    }
+
+    .logo img {
+        width: 80px;
+        margin-left: 20px;
+    }
+
+    .navigation ul {
+        gap: 15px;
+    }
+
+    .signup-btn {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .contact-info,
+    .contact-form-container {
+        width: 100%;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-logo img {
+        width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 5px 10px;
+    }
+
+    .logo img {
+        width: 60px;
+    }
+
+    .navigation ul {
+        gap: 10px;
+    }
+
+    .signup-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .contact-form button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
